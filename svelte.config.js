@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -17,7 +17,12 @@ const config = {
 				...config,
 				include: [...config.include, '../drizzle.config.ts']
 			})
-		}
+		},
+
+		paths: {
+      		// repo name goes here
+      		base: process.env.NODE_ENV === 'production' ? '/braindata' : ''
+    	}
 	}
 };
 
