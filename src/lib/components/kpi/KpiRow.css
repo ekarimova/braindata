@@ -1,0 +1,50 @@
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.kpi-card {
+  border-radius: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--color-surface, #1e1f1d);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+}
+
+.kpi-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--color-text-muted, #888);
+  margin-bottom: 0.35rem;
+}
+
+.kpi-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.kpi-sub {
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #888);
+}
+
+.kpi-value--seizures {
+  color: var(--color-seizure, #d163a7);
+}
+
+.kpi-value--prob {
+  color: var(--color-primary, #4f98a3);
+}
+
+.kpi-value--burden {
+  color: var(--color-spike, #e8af34);
+}
+
+.kpi-value--spikes {
+  color: var(--color-normal, #6daa45);
+}

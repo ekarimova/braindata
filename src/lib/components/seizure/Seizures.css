@@ -1,0 +1,76 @@
+.seizure-table-wrapper {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  background: var(--color-surface, #1e1f1d);
+}
+
+.seizure-table-title {
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.seizure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.seizure-table thead {
+  background: var(--color-surface-offset, #222);
+}
+
+.seizure-table th,
+.seizure-table td {
+  padding: 0.5rem 0.9rem;
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.08));
+  text-align: left;
+}
+
+.seizure-table th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--color-text-muted, #888);
+}
+
+.seizure-table td {
+  color: var(--color-text, #ddd);
+}
+
+.seizure-id {
+  font-family: monospace;
+  color: var(--color-text-muted, #888);
+}
+
+.confidence-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.confidence-bar-track {
+  flex: 1;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--color-surface-offset, #2a2a2a);
+  overflow: hidden;
+}
+
+.confidence-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--color-primary, #4f98a3);
+}
+
+.confidence-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted, #aaa);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
