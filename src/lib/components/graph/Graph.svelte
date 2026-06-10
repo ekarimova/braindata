@@ -11,13 +11,13 @@
 
 <div class="graph-panel">
   <div class="graph-header">
-    Seizure probability over time
+    Anfall-Warscheinlichkeit über die Zeit
   </div>
 
   <div class="graph-body">
     {#if !model.hasData}
       <div style="font-size: 0.85rem; color: var(--color-text-muted);">
-        No probability data available.
+        Keine Daten verfügbar.
       </div>
     {:else}
       <svg
