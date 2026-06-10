@@ -13,7 +13,7 @@
     <PatientView patient={data.patient} recording={data.recording} />
     <KpiRow summary={data.summary} />
     <Seizures seizures={data.seizures} />
-    <Graph graph={data.graph} />
+    <Graph graphs={data.graphs} />
   </main>
 {:else}
   <p>Wird geladen...</p>

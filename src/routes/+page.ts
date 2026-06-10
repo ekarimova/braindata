@@ -16,6 +16,6 @@ export const load = async ({ fetch }: LoadEvent) => {
     recording: json.recording,
     summary: json.summary,
     seizures: json.seizures,
-    graph: json.graph
+    graphs: json.graphs
   };
 };

@@ -42,6 +42,28 @@
   color: var(--color-text, #ddd);
 }
 
+.seizure-table tbody tr {
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.seizure-table tbody tr:hover {
+  background-color: rgba(1, 105, 111, 0.06);
+}
+
+.seizure-table tbody tr.selected {
+  background-color: rgba(0, 135, 142, 0.14);
+}
+
+.seizure-table tbody tr.selected .seizure-id {
+  font-weight: 700;
+}
+
+.seizure-table tbody tr.selected,
+.seizure-table tbody tr.selected:hover {
+  background-color: rgba(1, 105, 111, 0.14);
+}
+
 .seizure-id {
   font-family: monospace;
   color: var(--color-text-muted, #888);

@@ -1,5 +1,3 @@
-// src/lib/components/seizures/SeizureTable.ts
-
 export type { Seizure, SeizureTableViewProps } from './Seizures.types';
 
 export function formatTime(sec: number): string {

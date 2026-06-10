@@ -5,11 +5,13 @@ export interface GraphPoint {
 }
 
 export interface GraphData {
-  points: GraphPoint[];
+    name: string,
+    seizureId: number,
+    points: GraphPoint[];
 }
 
 export interface GraphProps {
-  graph: GraphData;
+  graphs: GraphData[];
 }
 
 export interface AxisTick {

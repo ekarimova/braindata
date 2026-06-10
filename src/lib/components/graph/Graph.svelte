@@ -1,21 +1,29 @@
 <script lang="ts">
-
   import './Graph.css';
   import type { GraphProps, GraphModel } from './graph.types';
   import { createGraphModel } from './Graph.ts';
+  import { selectedSeizureId } from '$lib/stores/braindata';
 
   const view: GraphProps = $props();
-  const model: GraphModel = createGraphModel(view.graph);
 
+  let selectedGraph = $derived(
+    $selectedSeizureId === null
+      ? (view.graphs[0] ?? null)
+      : (view.graphs.find((graph) => graph.seizureId === $selectedSeizureId) ?? view.graphs[0] ?? null)
+  );
+
+  let model = $derived(
+    selectedGraph ? createGraphModel(selectedGraph) : null
+  );
 </script>
 
 <div class="graph-panel">
   <div class="graph-header">
-    Anfall-Warscheinlichkeit über die Zeit
+    {selectedGraph?.name ?? 'Anfall-Warscheinlichkeit über die Zeit'}
   </div>
 
   <div class="graph-body">
-    {#if !model.hasData}
+    {#if !model || !model.hasData}
       <div style="font-size: 0.85rem; color: var(--color-text-muted);">
         Keine Daten verfügbar.
       </div>
@@ -24,7 +32,7 @@
         class="graph-svg"
         viewBox={`0 0 ${model.width} ${model.height}`}
         role="img"
-        aria-label="Anfall-Warscheinlichkeit über die Zeit"
+        aria-label={selectedGraph?.name ?? 'Anfall-Warscheinlichkeit über die Zeit'}
       >
         {#each model.yTicks as t}
           <line

@@ -1,14 +1,16 @@
 <script lang="ts">
   import './Seizures.css';
-  import type { SeizureTableViewProps, Seizure } from './Seizures.ts';
+  import type { SeizureTableViewProps } from './Seizures.ts';
   import {
     formatTime,
     formatDuration,
     formatConfidence,
-    humanType
   } from './Seizures.ts';
 
+  import { selectedSeizureId, selectSeizure } from '$lib/stores/braindata';
+
   const view: SeizureTableViewProps = $props();
+
 </script>
 
 <div class="seizure-table-wrapper">
@@ -31,7 +33,8 @@
       </thead>
       <tbody>
         {#each view.seizures as sz (sz.id)}
-          <tr>
+          <tr class:selected={$selectedSeizureId === sz.id}
+          onclick={() => selectSeizure(sz.id)}>
             <td class="seizure-id">{sz.id}</td>
             <td>{formatTime(sz.onsetSec)}</td>
             <td>{formatTime(sz.offsetSec)}</td>
