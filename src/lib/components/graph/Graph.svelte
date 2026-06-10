@@ -24,7 +24,7 @@
         class="graph-svg"
         viewBox={`0 0 ${model.width} ${model.height}`}
         role="img"
-        aria-label="Seizure probability over time"
+        aria-label="Anfall-Warscheinlichkeit über die Zeit"
       >
         {#each model.yTicks as t}
           <line
